@@ -5,8 +5,21 @@
 <title>tail-gate</title>
 <script type="text/javascript" src="http://cdn.socket.io/socket.io-1.0.4.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	var socket = io('http://localhost:7001');
+	socket.on('line', function(data){
+		
+		var output = data + '<br/>';
+		$('#contentDiv').append(output);
+		
+	});
+
+</script>
 </head>
 <body>
- 
+ 		<div id="contentDiv">
+ 			
+ 		
+ 		</div>
 </body>
 </html>
